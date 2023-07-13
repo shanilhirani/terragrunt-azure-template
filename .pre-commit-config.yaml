@@ -1,0 +1,44 @@
+repos:
+  - repo: "https://github.com/gruntwork-io/pre-commit"
+    rev: v0.1.22
+    hooks:
+      - id: terragrunt-hclfmt
+  - repo: "https://github.com/antonbabenko/pre-commit-terraform"
+    rev: v1.81.0
+    hooks:
+      - id: terraform_fmt
+        args:
+          - "--args=-recursive"
+      - id: terraform_tflint
+        args:
+          - "--args=--config=__GIT_WORKING_DIR__/.tflint.hcl"
+      - id: terraform_validate
+      - id: terraform_tfsec
+      - id: terraform_checkov
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      - id: trailing-whitespace
+        args:
+          - "--markdown-linebreak-ext=md"
+      - id: mixed-line-ending
+        args:
+          - "--fix=auto"
+      - id: check-case-conflict
+      - id: check-merge-conflict
+      - id: check-json
+      - id: check-yaml
+      - id: check-added-large-files
+      - id: detect-private-key
+      - id: no-commit-to-branch
+  - repo: "https://github.com/pre-commit/mirrors-prettier"
+    rev: v3.0.0
+    hooks:
+      - id: prettier
+        stages: [commit]
+  - repo: https://github.com/commitizen-tools/commitizen
+    rev: v3.5.3
+    hooks:
+      - id: commitizen
+      - id: commitizen-branch
+        stages: [push]

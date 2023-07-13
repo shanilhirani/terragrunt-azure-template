@@ -1,0 +1,4 @@
+Ignore README.md and CHANGELOG.md
+**/README.md
+**/CHANGELOG.md
+**/secrets.enc.yaml

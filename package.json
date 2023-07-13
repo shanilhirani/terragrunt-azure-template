@@ -1,0 +1,21 @@
+{
+  "name": "terragrunt-azure-template",
+  "version": "0.0.1",
+  "lockfileVersion": 1,
+  "requires": true,
+  "devDependencies": {
+    "auto-changelog": "^2.4.0"
+  },
+  "auto-changelog": {
+    "output": "CHANGELOG.md",
+    "template": "keepachangelog",
+    "unreleased": true,
+    "commitLimit": false
+  },
+  "scripts": {
+    "version": "auto-changelog -p && git add CHANGELOG.md"
+  },
+  "dependencies": {
+    "package.json": "^0.0.0"
+  }
+}
